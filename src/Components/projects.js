@@ -6,8 +6,16 @@ const Projects = () => {
   const [repos, setRepos] = useState([]);
   
   useEffect(() => {
-    const GITHUB_USERNAME = 'Tsageon'; 
-    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN; 
+    const GITHUB_USERNAME = 'Tsageon';
+    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+
+    Swal.fire({
+      title: 'Loading projects...',
+      text: 'Please wait while I fetch my projects.',
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
 
     fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`, {
       headers: {
@@ -20,8 +28,18 @@ const Projects = () => {
         }
         return response.json();
       })
-      .then(data => setRepos(data))
+      .then(data => {
+        setRepos(data);
+        Swal.close(); 
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Projects fetched!',
+          text: 'My GitHub projects have been loaded successfully.',
+        });
+      })
       .catch(err => {
+        Swal.close();
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
