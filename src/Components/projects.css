@@ -1,66 +1,85 @@
 .projects {
     padding: 2rem;
     text-align: center;
+    margin: 0 auto;
   }
   
   .projects h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .projects p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #555;
   }
   
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 0.8rem;
   }
   
   .project-card {
     background: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid silver;
     border-radius: 8px;
     padding: 1.5rem;
+    width:10rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
+    overflow: hidden;
   }
   
   .project-card h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+ 
+    text-overflow: ellipsis;
   }
   
   .project-card p {
     font-size: 1rem;
-    color: #666;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #555;
     margin-bottom: 1rem;
+    max-width: 100%; 
   }
   
   .project-actions {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap; 
   }
   
-  .btn-primary, .btn-secondary {
+  .btn-primary, .btn-secondary,.btn-about {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
   }
   
   .btn-primary {
-    background: #007bff;
+    background: skyblue;
   }
   
   .btn-primary:hover {
-    background: #0056b3;
+    background: royalblue;
   }
   
   .btn-secondary {
@@ -68,6 +87,214 @@
   }
   
   .btn-secondary:hover {
-    background: #1e7e34;
+    background: royalblue;
   }
   
+  .btn-about{
+    background-color: silver;
+    height: 2.7rem;
+    margin-top: 2.1%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .btn-about:hover{
+    background-color: royalblue;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 250px;
+  }
+  
+  .filters input:focus,
+  .filters select:focus {
+    border-color: royalblue;
+    box-shadow: 0 0 5px royalblue;
+  }
+  
+  .filters input::placeholder {
+    color: #999;
+  }
+  
+  .filters select {
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .filters input,
+  .filters select {
+    font-family: Arial, sans-serif;
+  }
+  
+  .filters select option {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .filters select:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .filters input,
+  .filters select {
+    margin-bottom: 1rem;
+  }
+  
+  .filters input:focus::placeholder {
+    color: transparent;
+  }
+  
+  .filters label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+  }
+
+@media (min-width: 1024px) {
+  .projects {
+    padding: 3rem;
+  }
+
+  .projects h1 {
+    font-size: 3rem;
+  }
+
+  .projects p {
+    font-size: 1.5rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .project-card {
+    width: 100%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .filters input,
+  .filters select {
+    width: 300px;
+  }
+
+  .filters {
+    gap: 1rem;
+  }
+
+  .filters input,
+  .filters select {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .btn-about {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .filters input,
+  .filters select {
+    width: 250px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 1.05rem;
+    padding: 0.55rem 1.1rem;
+  }
+
+  .btn-about {
+    font-size: 1.05rem;
+    padding: 0.55rem 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 1rem;
+  }
+
+  .projects h1 {
+    font-size: 2rem; 
+  }
+
+  .projects p {
+    font-size: 1rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%; 
+  }
+
+  .filters {
+    flex-direction: column; 
+    gap: 1rem;
+  }
+
+  .filters input,
+  .filters select {
+    font-size: 1rem; 
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-about {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,8 +1,10 @@
 .footer {
+    margin-top: auto; 
     background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
+    height: 15vh;
   }
   
   .footer-content {

@@ -3,7 +3,7 @@
     padding: 2rem 1rem;
     background-color: #f8f9fa;
   }
-  
+
   .skills h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -57,6 +57,48 @@
   
   .skill-card p {
     font-size: 1rem;
+    min-height: 2.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
     color: #777;
   }
+
+  @media (max-width: 768px) {
+    .skills {
+      padding: 1.5rem 1rem;
+    }
   
+    .skills h1 {
+      font-size: 1.8rem;
+    }
+  
+    .skills p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .skills-list {
+      gap: 1.5rem;
+    }
+  
+    .skill-card {
+      width: 100%;
+      max-width: 280px; 
+      padding: 1rem;
+    }
+  
+    .skill-card i {
+      font-size: 2.5rem;
+    }
+  
+    .skill-card h3 {
+      font-size: 1.3rem;
+    }
+  
+    .skill-card p {
+      font-size: 0.9rem;
+    }
+  }

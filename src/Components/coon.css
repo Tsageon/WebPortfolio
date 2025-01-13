@@ -1,3 +1,14 @@
+input,
+textarea {
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
 .contact {
     padding: 50px 20px;
     background-color: #f9f9f9;
@@ -79,3 +90,84 @@
     font-size: 0.9rem;
     text-align: center;
   }  
+
+  @media (max-width: 992px) {
+    .contact {
+        padding: 40px 15px;
+        margin: 40px auto;
+    }
+    .contact h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    .contact p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .contact-form label {
+        font-size: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    .contact-form button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 30px 10px;
+        margin: 30px auto;
+    }
+    .contact h1 {
+        font-size: 1.8rem;
+    }
+    .contact p {
+        font-size: 0.95rem;
+    }
+    .contact-form {
+        gap: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .contact-form button {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        padding: 20px 10px;
+        margin: 20px auto;
+    }
+    .contact h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .contact p {
+        font-size: 0.9rem;
+    }
+    .contact-form {
+        gap: 10px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+    .contact-form button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    .contact-form .error {
+        font-size: 0.85rem;
+    }
+}
