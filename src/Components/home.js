@@ -2,7 +2,7 @@ import React,{useState, useRef, useEffect} from "react";
 import { useNavigate } from "react-router";
 import { WiDaySunny } from 'react-icons/wi';
 import { SiExpress, SiMongodb, SiPaypal } from 'react-icons/si';
-import { FaHtml5, FaJsSquare, FaReact, FaNodeJs, FaCss3Alt, FaGithub, FaCode  } from "react-icons/fa";
+import { FaHtml5, FaJsSquare, FaReact, FaNodeJs, FaCss3Alt, FaGithub, FaCode , FaSun  } from "react-icons/fa";
 import About from './tings';
 import './home.css';
 
@@ -36,7 +36,7 @@ const Home = () => {
                 { name: 'React', icon: <FaReact /> },
                 { name: 'JavaScript', icon: <FaJsSquare /> },
                 { name: 'CSS', icon: <FaCss3Alt /> },
-                { name: 'Weather API', icon: <WiDaySunny /> }
+                { name: 'Weather API', icon: < FaSun /> }
             ],
             keyFeatures: [
                 'Real-time weather updates based on location or city search.Thank You OpenWeather.org',
