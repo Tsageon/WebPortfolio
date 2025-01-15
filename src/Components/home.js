@@ -1,6 +1,5 @@
 import React,{useState, useRef, useEffect} from "react";
 import { useNavigate } from "react-router";
-import { WiDaySunny } from 'react-icons/wi';
 import { SiExpress, SiMongodb, SiPaypal } from 'react-icons/si';
 import { FaHtml5, FaJsSquare, FaReact, FaNodeJs, FaCss3Alt, FaGithub, FaCode , FaSun  } from "react-icons/fa";
 import About from './tings';
