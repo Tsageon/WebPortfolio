@@ -46,6 +46,12 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+
+if (!response.ok) {
+  console.error('Fetch error:', response.statusText);
+  throw new Error('Failed to send message');
+}
+
       const data = await response.json();
 
       if (data.success) {
