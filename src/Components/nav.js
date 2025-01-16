@@ -8,7 +8,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector(".navbar");
-      if (window.scrollY > 10) {
+      if (window.scrollY > 50) {
         navbar.classList.add("show");
       } else {
         navbar.classList.remove("show");
@@ -24,11 +24,10 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${menuOpen ? "menu-open" : ""}`}>
       <div className="navbar-container">
-        <button
-          className="hamburger"
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqJiyynQdLXJ8pJTOZIcWaM9BMRRTvpLwZSSiHQRP8cw3umU-zeZcoubo&s" alt="My Logo" className="Logo-image" />
+        <button className="hamburger"
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle Menu"
-        >
+          aria-label="Toggle Menu">
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>

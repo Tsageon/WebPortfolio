@@ -440,9 +440,10 @@ html {
   margin-bottom: 30px;
 }
 
-.skills-container2 {
+.skills-container2 { 
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   gap: 1.5rem;
   overflow-x: auto;

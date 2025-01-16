@@ -1,7 +1,8 @@
-.navbar {
+.navbar { 
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 1rem;
   background-color: whitesmoke;
   position: fixed;
@@ -10,30 +11,85 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar.show {
-  background-color: royalblue;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid transparent; 
+  transition: border-bottom 0.3s ease-in-out; 
 }
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   max-width: 1200px;
 }
 
+.Logo-image {
+  height: 6rem;
+  border-radius: 10%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.show {
+  background-color: royalblue;
+  color:white;
+  box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
+  border-bottom: 0.3rem solid gray; 
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+
+.navbar-links a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s;
+  width: 100%;
+  padding-bottom: 5px;  
+}
+
+.navbar.show .navbar-links a:hover {
+  color: white;
+  font-weight: bold;
+  background-color: darkgray;
+  border-radius: 0.2rem;
+  width: 120%;
+  padding-bottom: 0.1rem; 
+}
+
+.navbar-links a:hover {
+  color: white;
+  background-color: royalblue;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.Logo-image:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px silver;
+  background-color: royalblue;
+}
+
+
+.navbar-links.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
 
 .hamburger {
-  display: none;
+  display: flex; 
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
   background: none;
   border: none;
   z-index: 1100;
+  transition: background-color 0.3s ease;
 }
 
 .hamburger-line {
@@ -61,63 +117,34 @@
   top: 20px;
   right: 2.6rem;
   font-size: 2rem;
-  color: red;
+  color: royalblue;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1200;
+  display: none; 
 }
 
 .close-menu:hover {
-  color: royalblue;
+  color: red;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 1.5rem;
-  transition: transform 0.3s ease;
+.navbar.show .hamburger-line {
+  background-color: white; 
 }
 
-.navbar-links a {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  transition: color 0.3s;
-  width: 100%;
+.navbar.show .close-menu {
+  display: block; 
 }
 
-.navbar-links a:hover {
-  color: white;
-  background-color: royalblue;
-  border-radius: 0.2rem;
-  width: 120%;
-}
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
 
-.navbar-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: royalblue;
-  transition: width 0.3s ease-in-out;
-}
-
-.navbar-links a:hover::after {
-  width: 100%; 
-}
-
-.navbar-links.open {
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-
-@media (max-width: 768px) {
   .hamburger {
     display: flex;
+    margin-right: 3%;
   }
 
   .navbar-links {
@@ -131,6 +158,10 @@
     transform: translateX(100%);
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     padding-top: 5rem;
+  }
+
+  .navbar.show .navbar-links a {
+    color: white; 
   }
 
   .navbar-links.open {
@@ -148,4 +179,39 @@
   .hamburger.open .hamburger-line:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
   }
+  .navbar.show .close-menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navbar-logo {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: royalblue;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-logo:hover {
+    color: darkblue;
+  }
+  .close-menu {
+    display: none;
+  }
+
+  .navbar.show .close-menu {
+    display: block;
+}
 }

@@ -11,12 +11,12 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevState) => ({
+      ...prevState,
       [name]: value,
-    });
+    }));
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
