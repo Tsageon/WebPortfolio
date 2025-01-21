@@ -3,6 +3,12 @@
     text-align: center;
     margin: 0 auto;
   }
+
+  .heading {
+    text-align: center; 
+    margin: 5rem 0; 
+    padding: 1rem; 
+  }
   
   .projects h1 {
     font-size: 2.5rem;
@@ -200,7 +206,7 @@
 
   .filters input,
   .filters select {
-    width: 300px;
+    width: 10rem;
   }
 
   .filters {
@@ -251,6 +257,7 @@
 @media (max-width: 600px) {
   .projects {
     padding: 1rem;
+    margin: 0 auto;
   }
 
   .projects h1 {
@@ -263,8 +270,10 @@
 
   .project-grid {
     display: grid;
+    margin-right: 3rem;
     grid-template-columns: 1fr;
     gap: 1rem;
+    width: auto;
   }
 
   .project-card {
@@ -285,6 +294,7 @@
   .filters input,
   .filters select {
     font-size: 1rem; 
+    width: auto;
   }
 
   .btn-primary,

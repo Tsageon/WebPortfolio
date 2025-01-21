@@ -39,8 +39,10 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills">
+      <div className='headingSkills'>
       <h1>My Skills</h1>
       <p>Hover over a skill to learn more about my experience:</p>
+      </div>
       <div className="skills-list">
         {skillsData.map((skill, index) => (
           <div

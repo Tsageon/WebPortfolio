@@ -66,7 +66,7 @@ html {
   text-align: center;
   border-right: 4px solid #333; 
   transition: opacity 0.6s ease, transform 0.5s ease;
-  animation: typing 10s steps(21) 1s forwards, blink 1.0s step-end infinite; 
+  animation: typing 2s steps(10) 1s forwards, blink 1.0s step-end infinite; 
 }
 
 @keyframes typing {
@@ -106,23 +106,38 @@ html {
   }
 
   .home-actions {
+    font-size: 0.9rem; 
     gap: 0.8rem; 
+    padding: 0.75rem 1rem;
   }
 }
 
 @media (max-width: 768px) {
+  .home {
+    height: 80vh; 
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
   .home h1 {
     font-size: 2.5rem; 
   }
 
   .home p {
     font-size: 1.1rem; 
+    width: 100%;
     margin: 1rem 0;
+  }
+
+  .home-content {
+    max-width: 100%;
+    padding: 1rem;
   }
 
   .home-actions {
     flex-direction: row; 
     margin-top: 3rem;
+    gap: 1.5rem; 
   }
 }
 

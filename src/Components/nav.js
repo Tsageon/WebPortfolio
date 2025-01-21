@@ -6,20 +6,31 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+    const hamburger = document.querySelector(".hamburger");
+  
     const handleScroll = () => {
-      const navbar = document.querySelector(".navbar");
       if (window.scrollY > 50) {
         navbar.classList.add("show");
       } else {
         navbar.classList.remove("show");
       }
     };
-
+  
+    const toggleMenu = () => {
+      hamburger.classList.toggle("open");
+      navbar.classList.toggle("show");
+    };
+  
     window.addEventListener("scroll", handleScroll);
+    hamburger.addEventListener("click", toggleMenu);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      hamburger.removeEventListener("click", toggleMenu);
     };
   }, []);
+  
 
   return (
     <nav className={`navbar ${menuOpen ? "menu-open" : ""}`}>

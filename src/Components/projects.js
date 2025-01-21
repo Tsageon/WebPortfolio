@@ -89,8 +89,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects">
+      <div className="heading">
       <h1>My projects</h1>
-      <p>Here are my works hosted on Github</p>
+      <p>Here are my works hosted on Github</p></div>
       <div className="filters">
         <input
           type="text"

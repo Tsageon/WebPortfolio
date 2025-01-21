@@ -77,8 +77,10 @@ if (!response.ok) {
 
   return (
     <section id="contact" className="contact">
+      <div className="headingContact">
       <h1>Contact Me</h1>
       <p>If you have any questions, feel free to send me a message and I'll get back to you!</p>
+      </div>
       <form onSubmit={handleSubmit} className="contact-form">
         <label htmlFor="name">Your Name</label>
         <input
