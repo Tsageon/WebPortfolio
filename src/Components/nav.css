@@ -30,7 +30,7 @@
 }
 
 .navbar.show {
-  background-color: royalblue;
+  background-color: #333;
   color:white;
   box-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.2);
   border-bottom: 0.3rem solid gray; 

@@ -73,6 +73,7 @@ WebPortfolio/
 └── webpack.config.js
 
 ## Sectiond Overview
+
 **Home:** Introduction and navigation to other sections.
 **Projects:** Showcases individual and group projects with descriptions and challenges faced.
 **About Me:** A popup containing personal information, goals,  interests and My Resume iyou want to download it ofcourse.
@@ -81,6 +82,7 @@ WebPortfolio/
 **Contact:** A contact form and social media links on the footer.
 
 ## 🎨 Customization
+
 **Theme:** Modify :root CSS variables to customize the portfolio theme.
 **Content:** Update content in the respective component files (e.g., About.js, Projects.js).
 
@@ -100,8 +102,8 @@ If you have any questions or want to connect just to chat:
 Email: sagaetshepo@gmail.com
 Location: Kimberley, SA
 
-
 ### Key Markdown Syntax:
+
 - **Headers**: Use `#` for titles (e.g., `##` for subsections).
 - **Lists**: Use `-` or `*` for bullet points.
 - **Code Blocks**: Use triple backticks (\`\`\`) for multi-line code blocks.
