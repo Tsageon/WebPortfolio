@@ -50,7 +50,7 @@ Follow these steps to run the portfolio on your local machine:
  Go to http://localhost:3000 in your browser.(This will be changed soon once I deploy it ofcourse)
 
 ## 📂 Project Structure
-WebPortfolio/
+Portfolio/
 ├── public/
 ├── src/
 │   ├── Components/
@@ -65,12 +65,11 @@ WebPortfolio/
 │   │   └── skills.css
 │   ├── App.js
 │   ├── index.js
-│   └── assets/
-│       └── Me.jpg
+│   └── Me.jpg
+│        
 ├── .gitignore
 ├── package.json
 ├── README.md
-└── webpack.config.js
 
 ## Sectiond Overview
 
@@ -110,4 +109,4 @@ Location: Kimberley, SA
 - **Inline Code**: Use single backticks (\`) for inline code snippets.
 - **Links**: `[Link Text](URL)` for hyperlinks.
 - **Emphasis**: `**` for bold, `_` or `*` for italics.
-- **Icons or Emojis**: Use `:emoji_name:` (e.g., `:rocket:` for 🚀).
+- **Icons or Emojis**: Use `:emoji_name:`(e.g., `:rocket:` for🚀).

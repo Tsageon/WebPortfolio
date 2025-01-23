@@ -11,7 +11,7 @@ const Home = () => {
     const skillsSectionRef = useRef(null);
 
     const openAboutModal = () => setIsAboutOpen(true);
-  const closeAboutModal = () => setIsAboutOpen(false);
+    const closeAboutModal = () => setIsAboutOpen(false);
 
     const projectData = [
         {
