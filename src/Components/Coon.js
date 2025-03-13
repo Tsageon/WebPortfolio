@@ -115,6 +115,6 @@ if (!response.ok) {
       </form>
     </section>
   );
-};
+}
 
 export default Contact;

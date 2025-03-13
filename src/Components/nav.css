@@ -137,7 +137,7 @@
 @media screen and (max-width: 768px) {
   .navbar-container {
     justify-content: space-between;
-    height: 4rem
+    height: 4rem;
   }
 
   .hamburger {
@@ -156,14 +156,10 @@
     transform: translateX(100%);
     box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
     padding-top: 5rem;
-  }
-
-  .navbar-links a {
-    color: black; 
+    transition: transform 0.3s ease;
   }
 
   .navbar-links.open {
-    color: black;
     transform: translateX(0);
   }
 
@@ -178,7 +174,10 @@
   .hamburger.open .hamburger-line:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
   }
- 
+
+  .close-menu {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -187,7 +186,19 @@
     justify-content: center;
   }
 
+  /* 💡 Ensure hamburger doesn't appear on desktop */
   .hamburger {
+    display: none !important;
+  }
+
+  .hamburger.open .hamburger-line:nth-child(1),
+  .hamburger.open .hamburger-line:nth-child(2),
+  .hamburger.open .hamburger-line:nth-child(3) {
+    transform: none; /* 🛑 Stops the rotation on desktop */
+    opacity: 1;
+  }
+
+  .close-menu {
     display: none;
   }
 
@@ -204,11 +215,4 @@
   .navbar-logo:hover {
     color: darkblue;
   }
-  .close-menu {
-    display: none;
-  }
-
-  .close-menu {
-    display: block;
-}
 }

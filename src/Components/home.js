@@ -1,4 +1,5 @@
 import React,{useState, useRef, useEffect} from "react";
+import { motion } from 'framer-motion';
 import { useNavigate } from "react-router";
 import { SiExpress, SiMongodb, SiPaypal } from 'react-icons/si';
 import { FaHtml5, FaJsSquare, FaReact, FaNodeJs, FaCss3Alt, FaGithub, FaCode , FaSun  } from "react-icons/fa";
@@ -112,34 +113,47 @@ const Home = () => {
         };
       }, []);
       
-    return (
-        <div>
-            <section id="home" className="home">
-                <div className="home-content">
-                    <h1>Hi, I'm <span>Letlhogonolo Sagae</span></h1>
-                    <p>
-                        I'm <strong>Junior Web Developer</strong> who enjoys creating minimalist and interesting websites which basically means I tend to prioritize functionality over design.
-                    </p>
-                    <div className="home-actions">
-                        <button className="btn-about" onClick={openAboutModal}>About Me</button>
-                        <button className="btn-secondary" onClick={() => navigate('/contact')}>Contact Me</button>
-                    </div>
-                </div>
-            </section>
-            
-            {isAboutOpen && (
-        <div className="about-modal">
-          <div className="about-modal-content">
-            <span className="close-btn" onClick={closeAboutModal}>&times;</span>
-            <About />
-          </div>
-        </div>
-      )}
-            <section id="projects2" className="projects2">
+return (
+<div>
+ <section id="home" className="home">
+    <div className="home-content">
+    <h1>Hi, I'm <span>Letlhogonolo Sagae</span></h1>
+    <p>
+    I'm <strong>Junior Web Developer</strong> who enjoys creating minimalist and interesting websites which basically means I tend to prioritize functionality over design.
+    </p>
+   <div className="home-actions">
+    <button className="btn-about" onClick={openAboutModal}>About Me</button>
+    <button className="btn-secondary" onClick={() => navigate('/contact')}>Contact Me</button>
+   </div>
+  </div>
+ </section>      
+          
+{isAboutOpen && (
+  <motion.div 
+    className="about-modal"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -50 }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="about-modal-content">
+      <span className="close-btn" onClick={closeAboutModal}>&times;</span>
+      <About />
+    </div>
+</motion.div>
+)}
+<section id="projects2" className="projects2">
   <h2>My Solo Projects</h2>
   <div className="projects-grid"> 
     {projectData.map((project, index) => (
-      <div key={index} className="project-card2">
+      <motion.div
+      key={index}
+      className="project-card2"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
         <div className="scrollable-content">
           <h3>{project.title}</h3>
           <p>{project.description}</p>
@@ -152,9 +166,7 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-         
         </div>
-
         <div className="project-details">
           <strong>Key Features:</strong>
           <ul>
@@ -168,32 +180,61 @@ const Home = () => {
           </a>
           </div>
         </div>
-      </div>
+        </motion.div>
     ))}
-  </div>
+</div>
 
-  <div className="the-btn">
-    <button className="btn-primary" onClick={() => navigate('/projects')}>
+<div className="the-btn1">
+  <motion.button 
+  className="btn-primary"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate('/projects')}>
       View all My Projects
-    </button>
+      </motion.button>
   </div>
 </section>
 
-
 <section id="group-projects" className="group-projects">
-  <h2>Group Projects</h2>
+<motion.h2 
+    initial={{ opacity: 0, y: -20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.5 }}
+  >
+    Group Projects
+  </motion.h2>
   {groupProjects.map((project, index) => (
-    <div key={index} className="group-project-card">
+    <motion.div 
+    key={index} 
+    className="group-project-card"
+    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
+    whileHover={{ scale: 1.05 }}
+  >
       <div className="scrollable-content">
-        <h3>{project.title}</h3>
+      <motion.h3 
+          initial={{ opacity: 0, y: 10 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.3 }}
+        >
+          {project.title}
+        </motion.h3>
         <p>{project.description}</p>
         <div className="tech-stack">
           <h4>Tech Stack:</h4>
           <ul>
             {project.techStack.map((tech, i) => (
-              <li key={i} className="tech-item">
-                {tech.icon} {tech.name}
-              </li>
+             <motion.li 
+             key={i} 
+             className="tech-item"
+             initial={{ opacity: 0, x: -10 }}
+             animate={{ opacity: 1, x: 0 }}
+             transition={{ duration: 0.2, delay: i * 0.05 }}
+             whileHover={{ scale: 1.1 }}
+           >
+             {tech.icon} {tech.name}
+           </motion.li>
             ))}
           </ul>
         </div>
@@ -201,152 +242,181 @@ const Home = () => {
           <strong>Key Features:</strong>
           <ul>
             {project.keyFeatures.map((feature, index) => (
-              <li key={index}>{feature}</li>
+               <motion.li 
+               key={index} 
+               initial={{ opacity: 0, x: 10 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.2, delay: index * 0.05 }}
+             >
+               {feature}
+             </motion.li>
             ))}
           </ul>
           <p><strong>Challenges Faced and Solutions:</strong> {project.challenges}</p>
-          <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+          <motion.a 
+            href={project.repoLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
             <FaGithub className="github-icon" /> View on GitHub
-          </a>
+          </motion.a>
         </div>
       </div>
-    </div>
+      </motion.div>
   ))}
-  <div className="the-btn">
-    <button className="btn-secondary" onClick={() => navigate('/projects')}>
+   <motion.div 
+    className="the-btn"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3, delay: 0.2 }}
+  >
+    <motion.button 
+      className="btn-secondary" 
+      onClick={() => navigate('/projects')}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
       View All
-    </button>
-  </div>
+    </motion.button>
+  </motion.div>
 </section>
 
-            <section id="assessments" className="assessments">
-  <h2>Assessments</h2>
-  <div className="assessment-card">
+<section id="assessments" className="assessments">
+<motion.h2 
+    initial={{ opacity: 0, y: -20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.5 }}
+  >
+    Assessments
+  </motion.h2>
+  <motion.div 
+    className="assessment-card"
+    initial={{ opacity: 0, y: 20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.4, delay: 0.1 }}
+  >
     <h3>UI Challenge</h3>
     <a href="https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5" target="_blank" rel="noopener noreferrer">View Challenge</a>
     <p>Date Completed: July 10, 2025</p>
     <p>Grade/Score: 70% - Above average.</p>
     <p>Notes: Demonstrated strong attention to detail in design, but room for improvement in responsiveness.</p>
-  </div>
+    </motion.div>
 
-  <div className="assessment-card">
+    <motion.div 
+    className="assessment-card"
+    initial={{ opacity: 0, y: 20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.4, delay: 0.2 }}
+  >
     <h3>JavaScript Assessment</h3>
     <p>Date Completed: August 8, 2025</p>
     <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript" target="_blank" rel="noopener noreferrer">View Challenge</a>
     <p>Grade/Score: 50% - Good understanding of basics.(Completed an External Course)</p>
     <p>Notes: Strong performance in solving problems, especially in loops.</p>
-  </div>
+    </motion.div>
 
-  <div className="assessment-card">
+    <motion.div 
+    className="assessment-card"
+    initial={{ opacity: 0, y: 20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.4, delay: 0.3 }}
+  >
     <h3>React Native</h3>
     <p>Date Completed: December 2024</p>
     <p>Grade/Score: N/A (Completed an external course).</p>
     <p>Notes: Course was self-paced; focused on developing mobile applications using React Native.</p>
-  </div>
+    </motion.div>
 </section>
 
 <section id="skills2" className="skills2" ref={skillsSectionRef}>
-  <h2>Skills Matrix</h2>
-  <div className="skills-container2">
+<motion.h2 
+    initial={{ opacity: 0, y: -20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.5 }}
+  >
+    Skills Matrix
+  </motion.h2>
     
-    <div className="skill-card2">
-      <div className="skill-card-inner2">
-        <div className="skill-card-front2">
-          <FaHtml5 className="skill-icon2" />
-          <h3>HTML</h3>
-          <p>Intermediate</p>
-          <p>50%</p>
+  <div className="skills-container2">
+    {['HTML', 'JavaScript', 'React', 'TypeScript', 'CSS'].map((skill, index) => (
+      <motion.div 
+        key={index}
+        className="skill-card2"
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className="skill-card-inner2">
+          <div className="skill-card-front2">
+            {skill === 'HTML' && <FaHtml5 className="skill-icon2" />}
+            {skill === 'JavaScript' && <FaJsSquare className="skill-icon2" />}
+            {skill === 'React' && <FaReact className="skill-icon2" />}
+            {skill === 'TypeScript' && <FaCode className="skill-icon2" />}
+            {skill === 'CSS' && <FaCss3Alt className="skill-icon2" />}
+            <h3>{skill}</h3>
+            <p>{index < 3 ? 'Intermediate' : 'Beginner'}</p>
+            <p>{index < 3 ? '50%' : '20%'}</p>
+          </div>
+          <div className="skill-card-back2">
+            <h3>{skill} Info</h3>
+            <p>{skill === 'HTML' ? 'Can Implement HTML5 features like web components, semantic elements, and forms.' : 
+                skill === 'JavaScript' ? 'Dabbles with ES6 features, async/await, and DOM manipulation.' :
+                skill === 'React' ? 'React hooks, context API, and state management with Redux.' :
+                skill === 'TypeScript' ? 'Learning static typing, interfaces, and generics in TypeScript.' :
+                'Understanding Flexbox, Grid, animations, and responsive design.'}
+            </p>
+          </div>
         </div>
-        <div className="skill-card-back2">
-          <h3>Info</h3>
-          <p>Can Implement HTML5 features like web components, semantic elements, and forms.</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="skill-card2">
-      <div className="skill-card-inner2">
-        <div className="skill-card-front2">
-          <FaJsSquare className="skill-icon2" />
-          <h3>JavaScript</h3>
-          <p>Intermediate</p>
-          <p>50%</p>
-        </div>
-        <div className="skill-card-back2">
-          <h3>JS Info</h3>
-          <p>Dabbles with ES6 features, async/await, and DOM manipulation.</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="skill-card2">
-      <div className="skill-card-inner2">
-        <div className="skill-card-front2">
-          <FaReact className="skill-icon2" />
-          <h3>React</h3>
-          <p>Intermediate</p>
-          <p>50%</p>
-        </div>
-        <div className="skill-card-back2">
-          <h3>React Details</h3>
-          <p>React hooks, context API, and state management with Redux.</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="skill-card2">
-      <div className="skill-card-inner2">
-        <div className="skill-card-front2">
-          <FaCode className="skill-icon2" />
-          <h3>TypeScript</h3>
-          <p>Beginner</p>
-          <p>20%</p>
-        </div>
-        <div className="skill-card-back2">
-          <h3>TypeScript Details</h3>
-          <p>Learning static typing, interfaces, and generics in TypeScript.</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="skill-card2">
-      <div className="skill-card-inner2">
-        <div className="skill-card-front2">
-          <FaCss3Alt className="skill-icon2" />
-          <h3>CSS</h3>
-          <p>Beginner</p>
-          <p>20%</p>
-        </div>
-        <div className="skill-card-back2">
-          <h3>CSS Details</h3>
-          <p>Understanding Flexbox, Grid, animations, and responsive design.</p>
-        </div>
-      </div>
-    </div>   
+      </motion.div>
+    ))}
   </div>
 </section>
 
+<section id="feedback" className="feedback">
+<motion.h2 
+    initial={{ opacity: 0, y: -20 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.5 }}
+  >
+    Feedback and Reflections
+  </motion.h2>
 
-            <section id="feedback" className="feedback">
-  <h2>Feedback and Reflections</h2>
   <div className="feedback-content">
-    <div className="feedback-card">
+   <motion.div 
+      className="feedback-card"
+      initial={{ opacity: 0, x: 20 }} 
+      animate={{ opacity: 1, x: 0 }} 
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
       <h3>Facilitator Feedback</h3>
-      <p className="feedback-text"> 
-        "Coming Soon."
-      </p>
-    </div>
-
-    <div className="reflection-card">
+      <motion.p 
+        className="feedback-text" 
+        initial={{ opacity: 0, rotate: -10 }}
+        animate={{ opacity: 1, rotate: [10, -10, 10] }} 
+        transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
+      >
+        "Coming Soon...."
+      </motion.p>
+    </motion.div>
+    <motion.div 
+      className="reflection-card"
+      initial={{ opacity: 0, x: 20 }} 
+      animate={{ opacity: 1, x: 0 }} 
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
       <h3>Self-Reflection</h3>
       <p className="reflection-text">
         "I've grown significantly in my ability to work with React and JavaScript. I would like to improve my understanding of advanced concepts in TypeScript. I can read code after it looking like squiggly lines and random words at the beginning. I just wanna thank CodeTribe for giving me the chance to grow which is ironic because I have learned so much but know nothing at the same time or as Mr Zack said Its Your Own Task To Keep Improving Ignore progress at your Own Peril."
       </p>
-    </div>
+    </motion.div>
   </div>
 </section>
-        </div>
-    );
+</div>
+);
 };
 
 export default Home;
