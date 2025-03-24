@@ -19,7 +19,7 @@ const Home = () => {
             title: 'Employee App',
             description: 'A web application for managing employee records and tasks. This project allows for adding, updating, and removing employee information while keeping track of their assigned tasks and performance. Built with React for the frontend and local storage to handle data management.',
             techStack: [
-                { name: 'Reactjs', icon: <FaReact /> }
+                { name: 'Reactjs', icon: <FaReact color="#61DBFB"/>}
             ],
             keyFeatures: [
                 'User authentication and role-based access control.',
@@ -33,10 +33,10 @@ const Home = () => {
             title: 'Weather App',
             description: 'A weather forecasting app that provides real-time weather updates based on user location or a searched city. This project integrates with a weather API to fetch data such as temperature, humidity, wind speed, and weather conditions.',
             techStack: [
-                { name: 'React', icon: <FaReact /> },
-                { name: 'JavaScript', icon: <FaJsSquare /> },
-                { name: 'CSS', icon: <FaCss3Alt /> },
-                { name: 'Weather API', icon: < FaSun /> }
+                { name: 'React', icon: <FaReact color="#61DBFB"/>},
+                { name: 'JavaScript', icon: <FaJsSquare color="#F0DB4F"/> },
+                { name: 'CSS', icon: <FaCss3Alt color="#2965f1"/> },
+                { name: 'OpenWeather API', icon: < FaSun color="orange"/> }
             ],
             keyFeatures: [
                 'Real-time weather updates based on location or city search.Thank You OpenWeather.org',
@@ -50,9 +50,9 @@ const Home = () => {
             title: 'Todo App',
             description: 'A task management app that allows users to create, update, and delete tasks with ease. It provides a simple interface to track daily to-dos, set priorities, and mark tasks as complete. The app is built using React and leverages local storage to persist tasks.',
             techStack: [
-                { name: 'React', icon: <FaReact /> },
-                { name: 'JavaScript', icon: <FaJsSquare /> },
-                { name: 'CSS', icon: <FaCss3Alt /> }
+                { name: 'React', icon: <FaReact color="#61DBFB"/> },
+                { name: 'JavaScript', icon: <FaJsSquare color="#F0DB4F"/>  },
+                { name: 'CSS', icon: <FaCss3Alt color="#2965f1"/> }
             ],
             keyFeatures: [
                 'Add, update, and delete tasks.',
@@ -71,11 +71,11 @@ const Home = () => {
             title: 'Restaurant App (Reservation System)',
             description: 'A web application for restaurant reservations, allowing users to book a table online. Integrated with PayPal for payments, this app allows customers to reserve spots and make payments securely.',
             techStack: [
-                { name: 'React', icon: <FaReact /> },
-                { name: 'Node.js', icon: <FaNodeJs /> },
+                { name: 'React', icon: <FaReact color="#61DBFB"/> },
+                { name: 'Node.js', icon: <FaNodeJs color="#68a063" /> },
                 { name: 'Express', icon: <SiExpress /> },
-                { name: 'MongoDB', icon: <SiMongodb /> },
-                { name: 'PayPal API', icon: <SiPaypal /> },
+                { name: 'MongoDB', icon: <SiMongodb color="#00ed64" /> },
+                { name: 'PayPal API', icon: <SiPaypal color=" #27346A"/> },
             ],
             
             keyFeatures: [
