@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin  } from "react-icons/fa";
 import './footer.css';
 
 const Footer = () => {
@@ -8,13 +10,13 @@ const Footer = () => {
         <p>&copy; 2025 My Portfolio. All rights reserved.</p>
         <div className="social-links">
           <a href="https://www.linkedin.com/in/tshepo-sagae-1bb7b8300/" target="_blank" rel="noopener noreferrer">
-            <i className="fa fa-linkedin"></i> LinkedIn
+             <FaLinkedin className="social-links-icon" /> LinkedIn
           </a>
           <a href="https://github.com/Tsageon" target="_blank" rel="noopener noreferrer">
-            <i className="fa fa-github"></i> GitHub
+             <FaGithub className="social-links-icon" /> GitHub
           </a>
           <a href="https://x.com/TSubcio" target="_blank" rel="noopener noreferrer">
-            <i className="fa fa-twitter"></i> Twitter
+             <FaXTwitter  className="social-links-icon" /> Twitter
           </a>
         </div>
       </div>

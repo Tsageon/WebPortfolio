@@ -123,7 +123,7 @@ return (
     </p>
    <div className="home-actions">
     <button className="btn-about" onClick={openAboutModal}>About Me</button>
-    <button className="btn-secondary" onClick={() => navigate('/contact')}>Contact Me</button>
+    <button className="btn-second" onClick={() => navigate('/contact')}>Contact Me</button>
    </div>
   </div>
  </section>      
@@ -285,13 +285,15 @@ return (
 </section>
 
 <section id="assessments" className="assessments">
-<motion.h2 
+  <motion.h2 
     initial={{ opacity: 0, y: -20 }} 
     animate={{ opacity: 1, y: 0 }} 
     transition={{ duration: 0.5 }}
   >
     Assessments
   </motion.h2>
+
+    <div className="assessment-cards-container">
   <motion.div 
     className="assessment-card"
     initial={{ opacity: 0, y: 20 }} 
@@ -329,6 +331,7 @@ return (
     <p>Grade/Score: N/A (Completed an external course).</p>
     <p>Notes: Course was self-paced; focused on developing mobile applications using React Native.</p>
     </motion.div>
+    </div>
 </section>
 
 <section id="skills2" className="skills2" ref={skillsSectionRef}>
@@ -406,8 +409,7 @@ return (
       className="reflection-card"
       initial={{ opacity: 0, x: 20 }} 
       animate={{ opacity: 1, x: 0 }} 
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
+      transition={{ duration: 0.5, delay: 0.2 }}>
       <h3>Self-Reflection</h3>
       <p className="reflection-text">
         "I've grown significantly in my ability to work with React and JavaScript. I would like to improve my understanding of advanced concepts in TypeScript. I can read code after it looking like squiggly lines and random words at the beginning. I just wanna thank CodeTribe for giving me the chance to grow which is ironic because I have learned so much but know nothing at the same time or as Mr Zack said Its Your Own Task To Keep Improving Ignore progress at your Own Peril."

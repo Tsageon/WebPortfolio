@@ -1,6 +1,6 @@
 import React from 'react';
-import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import Animated from './Components/animated';
 import Nav from './Components/nav';
 import Home from './Components/home';
 import About from './Components/tings';
@@ -9,18 +9,23 @@ import Projects from './Components/projects';
 import Contact from './Components/Coon';
 import Layout from './Components/LayoutWrapper';
 
-function App() {
+const App = () => {
+
   return (
-    <Router>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Layout><Home /></Layout>} />
-        <Route path="about" element={<Layout><About/></Layout>} />
-        <Route path="projects" element={<Layout><Projects/></Layout>} />
-        <Route path="skills" element={<Layout><Skills/></Layout>}/>
-        <Route path="contact" element={<Layout><Contact/></Layout>}/>
-      </Routes>
-    </Router>     
+ <Router>
+  <Nav />
+  <Animated />
+  <div className="page-content">
+    <Routes>
+      <Route path="/" element={<Layout><Home /></Layout>} />
+      <Route path="about" element={<Layout><About /></Layout>} />
+      <Route path="projects" element={<Layout><Projects /></Layout>} />
+      <Route path="skills" element={<Layout><Skills /></Layout>}/>
+      <Route path="contact" element={<Layout><Contact /></Layout>}/>
+    </Routes>
+  </div>
+</Router>
+    
   );
 }
 

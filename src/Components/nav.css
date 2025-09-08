@@ -70,9 +70,19 @@
 }
 
 .Logo-image {
+  width: 6rem;
   height: 6rem;
+  cursor: pointer;
   border-radius: 10%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+body.light .Logo-image {
+  filter: drop-shadow(0 0 5px silver);
+}
+
+body.dark .Logo-image {
+  filter: drop-shadow(0 0 10px royalblue);
 }
 
 .hamburger {

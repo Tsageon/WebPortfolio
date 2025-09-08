@@ -7,19 +7,26 @@ html {
   scroll-behavior: smooth;
 }
 
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,255,255,0.3);
+  z-index: -1;
+}
+
 .home {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transition: background 0.5s ease-in-out;
-  background: linear-gradient(135deg, #ffffff, #e8f4ff);
+
 }
 
 .home:hover {
   transition: background 0.5s ease-in-out;
-  background: linear-gradient(135deg, #e8f4ff, #ffffff);
+  background-color: rgba(255,255,255,0.3);
 }
 
 .home-content {
@@ -92,6 +99,25 @@ html {
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.btn-second {
+    background-color: royalblue;
+    height: 2.7rem;
+    margin-top: 2.1%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn-second:hover {
+  background-color: silver;
 }
 
 
@@ -363,20 +389,6 @@ html {
   text-decoration: underline;
 }
 
-.btn-secondary {
-  padding: 1rem 2rem;
-  background-color: royalblue;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 1rem;
-  margin-top: 2%;
-}
-
-.btn-secondary:hover {
-  background-color: silver;
-}
 
 @media (max-width: 768px) {
   .projects-grid {
@@ -636,18 +648,27 @@ html {
   text-align: center;
   font-size: 2rem;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.assessment-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .assessment-card {
   background-color: #fff;
   padding: 1.2rem;
-  margin: 1rem 0;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33% - 1rem);
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .assessment-card h3 {
@@ -670,8 +691,9 @@ html {
 
 .assessment-card:hover{
   transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
 .assessment-card p {
   color: #555;
   font-size: 1rem;
@@ -729,4 +751,22 @@ html {
 
 .the-btn1 {
 margin-top: 2rem;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #00bfff, #ffb400);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1; 
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
